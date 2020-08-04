@@ -1,0 +1,3 @@
+[submodule "Assets/NW_SDK"]
+	path = Assets/NW_SDK
+	url = https://github.com/NeatWarePL/sdk-submodule.git
