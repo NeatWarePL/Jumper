@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba00333b1d8f694886e8fc58ef3f051, type: 3}
+  m_Name: ScribtaleObjectInstaller
+  m_EditorClassIdentifier: 
+  gameConfigData: {fileID: 11400000, guid: bc1bcb860b5db7a4895220ade3ef0ee6, type: 2}
+  rhythmizationConfig: {fileID: 11400000, guid: 021dc4289c0e9764b8068a3116961b6d,
+    type: 2}
+  adsProvider: {fileID: 0}
+  analytics: []

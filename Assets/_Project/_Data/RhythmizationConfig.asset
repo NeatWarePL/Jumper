@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cbe726719f51e4eb52fb142a664d8c, type: 3}
+  m_Name: RhythmizationConfig
+  m_EditorClassIdentifier: 
+  musicDelay: 0.1
+  songsList:
+  - {fileID: 11400000, guid: 4a73f66c3e2a8c74a84376983e297329, type: 2}
+  - {fileID: 11400000, guid: f3aa6a1cdde7a7640b937907a86b94af, type: 2}
+  - {fileID: 11400000, guid: 4df57e8921dbe834ca618aefd4ead5b7, type: 2}
+  - {fileID: 11400000, guid: 6a94f1c3cad750f4eadfcf052dce4dc6, type: 2}
+  - {fileID: 11400000, guid: 8cdc573cb0cee464e9627dff151075c8, type: 2}
+  - {fileID: 11400000, guid: 3d17f5fd4ad0ba54fa73033daaab349f, type: 2}

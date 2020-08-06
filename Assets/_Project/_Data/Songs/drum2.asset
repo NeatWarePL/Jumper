@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d84a9b9d0ffcb14fa7c9f118cdeb226, type: 3}
+  m_Name: drum2
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0e412a703b319444ebcc031b731c90de, type: 3}
+  title: drum2
+  rhythmToolData: {fileID: 11400000, guid: 83bf67ef83550a744aa8a05cffb4a4b0, type: 2}
+  beatsData: []

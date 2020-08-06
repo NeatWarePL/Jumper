@@ -17,3 +17,4 @@ MonoBehaviour:
   playerJumpRange: 16
   playerJumpSpeed: 0.85
   wallsCount: 6
+  beatsBetweenJumps: 2

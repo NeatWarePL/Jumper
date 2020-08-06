@@ -12,4 +12,6 @@ public class GameConfigData : ScriptableObject
     public float playerJumpSpeed;
     [Header("WALLS")]
     public float wallsCount;
+    [Header("RHYTHMIZATION")]
+    public int beatsBetweenJumps;
 }

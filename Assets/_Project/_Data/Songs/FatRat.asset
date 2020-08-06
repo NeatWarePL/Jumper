@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d84a9b9d0ffcb14fa7c9f118cdeb226, type: 3}
+  m_Name: FatRat
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: c83684b9c84e1954fbe2dfa72eaf7c2a, type: 3}
+  title: Unity
+  rhythmToolData: {fileID: 11400000, guid: 3286c355bfea9264fa2501e059f1e027, type: 2}
+  beatsData: []

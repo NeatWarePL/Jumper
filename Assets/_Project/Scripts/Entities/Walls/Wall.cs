@@ -4,4 +4,10 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
+    public MoveWall moveWallModule;
+
+    public void SetupWallHeight(float wallHeight)
+    {
+        moveWallModule.SetupMyHeight(wallHeight);
+    }
 }

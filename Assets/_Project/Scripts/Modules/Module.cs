@@ -5,7 +5,7 @@ using Zenject;
 
 public class Module : MonoBehaviour
 {
-    protected Entity myEntity;
+    public Entity myEntity;
     protected Transform myEntityTransform;
 
     [HideInInspector]
@@ -13,7 +13,10 @@ public class Module : MonoBehaviour
 
     private void Awake()
     {
-        myEntity = GetComponentInParent<Entity>();
+        if (myEntity == null)
+        {
+            myEntity = GetComponentInParent<Entity>();
+        }
         myEntityTransform = myEntity?.transform;
     }
 }

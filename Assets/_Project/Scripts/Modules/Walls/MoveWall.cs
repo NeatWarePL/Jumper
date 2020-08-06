@@ -12,11 +12,16 @@ public class MoveWall : Module
         {
             target = NW.Game.EventsProvider.player;
         }
-        MoveMe();
+        MoveMe(target.position.x + (gameConfig.playerSmashRange * 0.5f) + (gameConfig.playerSmashRange * WallsSpawner.currentWallsCount));
     }
 
-    public void MoveMe()
+    public void MoveMe(float posX)
     {
-        myEntityTransform.position = new Vector3(target.position.x + (gameConfig.playerSmashRange * 0.5f) + (gameConfig.playerSmashRange * WallsSpawner.currentWallsCount), myEntityTransform.position.y, target.position.z);
+        myEntityTransform.position = new Vector3(posX, myEntityTransform.position.y, target.position.z);
+    }
+
+    public void SetupMyHeight(float height)
+    {
+        myEntityTransform.position = new Vector3(myEntityTransform.position.x, height, target.position.z);
     }
 }
