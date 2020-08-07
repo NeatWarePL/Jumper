@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d22e73f633944f459493e963935bdb4, type: 3}
   m_Name: GameConfigData
   m_EditorClassIdentifier: 
-  playerSmashRange: 12
+  playerSmashRange: 100
   playerSmashSpeed: 0.05
-  playerJumpRange: 16
+  playerJumpRange: 14
   playerJumpSpeed: 0.85
-  wallsCount: 6
+  wallsCount: 1
+  wallsRange: 100
   beatsBetweenJumps: 2

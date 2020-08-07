@@ -15,7 +15,7 @@ public class WallsSpawner2 : WallsSpawner
     {
     }
 
-    public override void CreateWall(float wallHeight)
+    public override void CreateWall()
     {
         Instantiate(wallPrefab, transform);
     }

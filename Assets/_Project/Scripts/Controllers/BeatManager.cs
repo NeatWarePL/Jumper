@@ -7,91 +7,70 @@ public class BeatManager : Module
 {
     public static Action<float> onJump;
     public static Action onSmash;
-    public static Action<float> onWallCreate;
-    int beatToJump;
-    int currentBeat;
-    BeatData jumpBeatData;
+    public static Action onWallCreate;
+    int beatToJumpId;
+    public static int currentBeatId;
+    public static float firstJumpTime;
+    public static float secondJumpTime;
+    public static BeatData currentBeatData;
+    public static BeatData firstJumpBeatData;
 
     private void Awake()
     {
-        beatToJump = gameConfig.beatsBetweenJumps;
+        beatToJumpId = gameConfig.beatsBetweenJumps;
     }
 
     private void OnEnable()
     {
-        Rhythmizer.onBeat += BeatAction;
+        Rhythmizer.onBeat += BeatActions;
     }
 
     private void OnDisable()
     {
-        Rhythmizer.onBeat -= BeatAction;
+        Rhythmizer.onBeat -= BeatActions;
     }
 
     private void Start()
     {
-        currentBeat = beatToJump;
+        currentBeatId = beatToJumpId;
     }
 
-    private void BeatAction(BeatData beatData)
+    private void BeatActions(BeatData beatData)
     {
-        if (beatToJump == currentBeat)
+        currentBeatData = beatData;
+        if (beatToJumpId == currentBeatId)
         {
-            currentBeat = 0;
-            for (int i = 0; i < beatData.followingBeatsTimestamps.Length; i++)
-            {
-                if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f)
-                {
-                    beatToJump = i;
-                    jumpBeatData = beatData;
-                    break;
-                }
-            }
-            onJump?.Invoke(beatData.GetTimeToFollowingBeat(beatData, beatToJump) * 0.48f);
+            currentBeatId = 0;
+            SetupNewJumpTimes(beatData);
+            onJump?.Invoke(firstJumpTime * 0.48f);
         }
         else
         {
-            float desiredHeight = GetNewWallHeight(beatData);
-
-            onWallCreate?.Invoke(desiredHeight);
+            onWallCreate?.Invoke();
             onSmash?.Invoke();
         }
-        currentBeat++;
+        currentBeatId++;
     }
 
-    private float GetNewWallHeight(BeatData beatData)
+    private void SetupNewJumpTimes(BeatData beatData)
     {
-        float newWallBeatData = RecognizeBeat(beatData);
-
-        float beatPercentage = beatData.GetTimeToFollowingBeat(jumpBeatData, currentBeat) / beatData.GetTimeToFollowingBeat(jumpBeatData, beatToJump);
-        float desiredHeight = beatPercentage * 2;
-        if (desiredHeight <= 1)
-        {
-            desiredHeight *= 16;
-        }
-        else
-        {
-            desiredHeight = 1 + (1 - desiredHeight);
-            desiredHeight *= 16;
-        }
-        return desiredHeight;
-    }
-
-    private float RecognizeBeat(BeatData beatData)
-    {
-        float newTime = 0f;
         for (int i = 0; i < beatData.followingBeatsTimestamps.Length; i++)
         {
-            if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f + beatData.GetTimeToFollowingBeat(beatData, beatToJump))
+            if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f)
             {
-                //beatToJump = i;
-                //jumpBeatData = beatData;
-                newTime = beatData.GetTimeToFollowingBeat(beatData, i);
+                beatToJumpId = i;
+                firstJumpBeatData = beatData;
+                firstJumpTime = beatData.GetTimeToFollowingBeat(beatData, beatToJumpId);
                 break;
             }
         }
-        newTime -= beatData.GetTimeToFollowingBeat(beatData, beatToJump);
-        print(newTime);
-
-        return newTime;
+        for (int i = 0; i < beatData.followingBeatsTimestamps.Length; i++)
+        {
+            if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f + beatData.GetTimeToFollowingBeat(beatData, beatToJumpId))
+            {
+                secondJumpTime = beatData.GetTimeToFollowingBeat(beatData, i);
+                break;
+            }
+        }
     }
 }
