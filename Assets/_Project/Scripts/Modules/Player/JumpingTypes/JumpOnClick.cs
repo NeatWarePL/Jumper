@@ -12,7 +12,7 @@ public class JumpOnClick : Module
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            JumpDebug(gameConfig.playerJumpSpeed * 0.48f);
+            JumpDebug(2 * 0.48f);
             //JumpMe();
         }
     }
@@ -22,7 +22,7 @@ public class JumpOnClick : Module
         if (!DOTween.IsTweening(myEntityTransform))
         {
             startingYPos = myEntityTransform.position.y;
-            myEntityTransform.DOMoveY(gameConfig.playerJumpRange, time).SetEase(Ease.OutQuad).OnComplete(() => FallDownContinue(time));
+            myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.OutQuad).OnComplete(() => FallDownContinue(time));
         }
     }
 

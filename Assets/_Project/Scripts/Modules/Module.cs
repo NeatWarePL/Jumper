@@ -10,6 +10,8 @@ public class Module : MonoBehaviour
 
     [HideInInspector]
     [InjectOptional] public GameConfigData gameConfig;
+    [HideInInspector]
+    [InjectOptional] public RhythmizationConfig rhythmizationConfig;
 
     private void Awake()
     {

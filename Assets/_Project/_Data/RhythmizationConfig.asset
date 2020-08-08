@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cbe726719f51e4eb52fb142a664d8c, type: 3}
   m_Name: RhythmizationConfig
   m_EditorClassIdentifier: 
-  musicDelay: 0.1
+  musicDelay: 0.4
   songsList:
   - {fileID: 11400000, guid: 4a73f66c3e2a8c74a84376983e297329, type: 2}
   - {fileID: 11400000, guid: f3aa6a1cdde7a7640b937907a86b94af, type: 2}

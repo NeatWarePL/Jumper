@@ -9,21 +9,15 @@ public class Jump : Module
 
     private void OnEnable()
     {
-        BeatManager.onJump += OnBeatListener;
+        NW.Game.EventsProvider.onJump += OnJump;
     }
 
     private void OnDisable()
     {
-        BeatManager.onJump -= OnBeatListener;
+        NW.Game.EventsProvider.onJump -= OnJump;
     }
 
-    protected void OnBeatListener(float jumpTime)
+    protected virtual void OnJump(float jumpTime)
     {
-        StartCoroutine(JumpCoroutine(jumpTime));
-    }
-
-    protected virtual IEnumerator JumpCoroutine(float jumpTime)
-    {
-        yield return null;
     }
 }

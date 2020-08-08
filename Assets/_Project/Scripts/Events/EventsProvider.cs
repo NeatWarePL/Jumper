@@ -8,6 +8,7 @@ namespace NW.Game
     public static class EventsProvider
     {
         public static Transform player;
-        public static Action onSmash;
+        public static Action<float> onJump;
+        public static Action onGroundHit;
     }
 }

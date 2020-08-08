@@ -6,6 +6,6 @@ public class Move : Module
 {
     private void Update()
     {
-        myEntityTransform.Translate(new Vector3(1, 0, 0));
+        myEntityTransform.Translate(new Vector3(gameConfig.playerSpeed, 0, 0));
     }
 }

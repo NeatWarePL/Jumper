@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class ConstantJump : Jump
 {
+    public float jumpspeed;
+
     private void Start()
     {
-        JumpDebug(gameConfig.playerJumpSpeed);
+        JumpDebug(jumpspeed);
     }
 
     public void JumpDebug(float time)
     {
         startingYPos = myEntityTransform.position.y;
-        myEntityTransform.DOMoveY(gameConfig.playerJumpRange, time).SetEase(Ease.OutQuad).OnComplete(() => FallDownContinue(time));
+        myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.Linear).OnComplete(() => FallDownContinue(time));
     }
 
     public void FallDownContinue(float time)
     {
-        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad).OnComplete(() => JumpDebug(time));
+        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.Linear).OnComplete(() => JumpDebug(time));
     }
 }

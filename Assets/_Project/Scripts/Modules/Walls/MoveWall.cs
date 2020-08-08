@@ -12,7 +12,7 @@ public class MoveWall : Module
         {
             target = NW.Game.EventsProvider.player;
         }
-        MoveMe(target.position.x + gameConfig.wallsRange);
+        MoveMe(target.position.x + 30f);
     }
 
     public void MoveMe(float posX)

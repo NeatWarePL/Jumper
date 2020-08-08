@@ -6,20 +6,28 @@ using System;
 
 public class BeatJumping : Jump
 {
-    protected override IEnumerator JumpCoroutine(float jumpTime)
+    protected override void OnJump(float jumpTime)
     {
-        yield return new WaitForSeconds(0.11f);
         Jump(jumpTime);
     }
 
     public void Jump(float time)
     {
         startingYPos = myEntityTransform.position.y;
-        myEntityTransform.DOMoveY(gameConfig.playerJumpRange, time).SetEase(Ease.OutQuad).OnComplete(() => FallDown(time));
+        myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.OutQuad).OnComplete(() => FallDown(time));
+    }
+
+    public void ActionMidJump()
+    {
     }
 
     public void FallDown(float time)
     {
-        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad);
+        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad).OnComplete(GroundHitAction);
+    }
+
+    public void GroundHitAction()
+    {
+        NW.Game.EventsProvider.onGroundHit?.Invoke();
     }
 }

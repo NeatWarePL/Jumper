@@ -6,10 +6,10 @@ using UnityEngine;
 public class GameConfigData : ScriptableObject
 {
     [Header("PLAYER")]
-    public float playerSmashRange;
-    public float playerSmashSpeed;
-    public float playerJumpRange;
-    public float playerJumpSpeed;
+    public int beatsDuringJump;
+    public int beatsBeforeJump;
+    public float playerJumpHeight;
+    public float playerSpeed;
     [Header("WALLS")]
     public float wallsCount;
     public float wallsRange;

@@ -1,24 +1,14 @@
-﻿using System;
+﻿using NW.Game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BeatManager : Module
 {
-    public static Action<float> onJump;
-    public static Action onSmash;
     public static Action onWallCreate;
-    int beatToJumpId;
-    public static int currentBeatId;
-    public static float firstJumpTime;
-    public static float secondJumpTime;
-    public static BeatData currentBeatData;
-    public static BeatData firstJumpBeatData;
-
-    private void Awake()
-    {
-        beatToJumpId = gameConfig.beatsBetweenJumps;
-    }
+    public static Action onBeat;
+    public static Action onMidJump;
 
     private void OnEnable()
     {
@@ -30,47 +20,28 @@ public class BeatManager : Module
         Rhythmizer.onBeat -= BeatActions;
     }
 
-    private void Start()
-    {
-        currentBeatId = beatToJumpId;
-    }
+    int kiszka = 0;
 
     private void BeatActions(BeatData beatData)
     {
-        currentBeatData = beatData;
-        if (beatToJumpId == currentBeatId)
-        {
-            currentBeatId = 0;
-            SetupNewJumpTimes(beatData);
-            onJump?.Invoke(firstJumpTime * 0.48f);
-        }
-        else
-        {
-            onWallCreate?.Invoke();
-            onSmash?.Invoke();
-        }
-        currentBeatId++;
+        StartCoroutine(BeatActionDelay(beatData));
     }
 
-    private void SetupNewJumpTimes(BeatData beatData)
+    public IEnumerator BeatActionDelay(BeatData beatData)
     {
-        for (int i = 0; i < beatData.followingBeatsTimestamps.Length; i++)
+        yield return new WaitForSeconds(rhythmizationConfig.GetMusicDelay);
+        print(kiszka);
+        if (kiszka == 0)
         {
-            if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f)
-            {
-                beatToJumpId = i;
-                firstJumpBeatData = beatData;
-                firstJumpTime = beatData.GetTimeToFollowingBeat(beatData, beatToJumpId);
-                break;
-            }
+            onMidJump?.Invoke();
         }
-        for (int i = 0; i < beatData.followingBeatsTimestamps.Length; i++)
+        kiszka++;
+        onBeat?.Invoke();
+        if (kiszka == gameConfig.beatsBeforeJump + gameConfig.beatsDuringJump)
         {
-            if (beatData.GetTimeToFollowingBeat(beatData, i) > 1.5f + beatData.GetTimeToFollowingBeat(beatData, beatToJumpId))
-            {
-                secondJumpTime = beatData.GetTimeToFollowingBeat(beatData, i);
-                break;
-            }
+            //onWallCreate?.Invoke();
+            kiszka = 0;
+            NW.Game.EventsProvider.onJump?.Invoke(beatData.GetTimeToFollowingBeat(beatData, gameConfig.beatsDuringJump) * 0.49f);
         }
     }
 }
