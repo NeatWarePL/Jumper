@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class BeatJumpingWithDash : Jump
 {
@@ -13,8 +14,16 @@ public class BeatJumpingWithDash : Jump
     public void Jump(float time)
     {
         startingYPos = myEntityTransform.position.y;
-        myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time * 0.7f).SetEase(Ease.OutQuad).OnComplete(() => Dash(time));
+        //myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time * 0.7f).SetEase(Ease.OutQuad).OnComplete(() => Dash(time));
         //myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.InQuint).OnComplete(() => FallDown(time));
+        StartCoroutine(JumpDelay(time));
+        //myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.OutQuad).OnComplete(() => FallDown(time));
+    }
+
+    private IEnumerator JumpDelay(float time)
+    {
+        yield return new WaitForSeconds(time * 0.6f);
+        myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time * 0.4f).SetEase(Ease.OutQuad).OnComplete(() => FallDown(time));
     }
 
     public void Dash(float time)
@@ -25,8 +34,8 @@ public class BeatJumpingWithDash : Jump
 
     public void FallDown(float time)
     {
-        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad).OnComplete(GroundHitAction);
-        //myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.OutQuint).OnComplete(GroundHitAction);
+        //myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad).OnComplete(GroundHitAction);
+        myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.OutQuint).OnComplete(GroundHitAction);
     }
 
     public void GroundHitAction()

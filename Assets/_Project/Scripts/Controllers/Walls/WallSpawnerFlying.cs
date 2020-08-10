@@ -37,7 +37,6 @@ public class WallSpawnerFlying : Module
     public void ManageSpawns(BeatData beatData)
     {
         beatAfterCircleCreated++;
-        print(beatAfterCircleCreated);
         if (beatAfterCircleCreated == gameConfig.beatsBeforeJump + 2)
         {
             SpawnWallIfAble(beatData);
