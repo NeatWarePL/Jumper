@@ -6,13 +6,13 @@ using UnityEngine;
 public class GameConfigData : ScriptableObject
 {
     [Header("PLAYER")]
+    public float playerJumpHeight;
+    public float playerSpeedOnConstant;
+    public float playerSpeedOnDoTween;
+    public float dashRange;
+    [Header("WALLS")]
+    public int numberOfWallsSpawnedAheadOfPlayer;
+    [Header("RHYTHMIZATION")]
     public int beatsDuringJump;
     public int beatsBeforeJump;
-    public float playerJumpHeight;
-    public float playerSpeed;
-    [Header("WALLS")]
-    public float wallsCount;
-    public float wallsRange;
-    [Header("RHYTHMIZATION")]
-    public int beatsBetweenJumps;
 }

@@ -10,5 +10,7 @@ namespace NW.Game
         public static Transform player;
         public static Action<float> onJump;
         public static Action onGroundHit;
+        public static Action onWallHit;
+        public static Action onCircleHit;
     }
 }

@@ -15,15 +15,17 @@ public class BeatJumping : Jump
     {
         startingYPos = myEntityTransform.position.y;
         myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.OutQuad).OnComplete(() => FallDown(time));
+        //myEntityTransform.DOMoveY(gameConfig.playerJumpHeight, time).SetEase(Ease.InQuint).OnComplete(() => FallDown(time));
     }
 
-    public void ActionMidJump()
+    public void Dash(float time)
     {
     }
 
     public void FallDown(float time)
     {
         myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.InQuad).OnComplete(GroundHitAction);
+        //myEntityTransform.DOMoveY(startingYPos, time).SetEase(Ease.OutQuint).OnComplete(GroundHitAction);
     }
 
     public void GroundHitAction()

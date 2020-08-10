@@ -35,7 +35,7 @@ public class WallsSpawnerAllOnStart : Module
         for (int i = 0; i < songData.beatsData.Length; i++)
         {
             kiszka++;
-            if (kiszka == gameConfig.beatsBeforeJump + gameConfig.beatsBetweenJumps)
+            if (kiszka == gameConfig.beatsBeforeJump + gameConfig.beatsDuringJump)
             {
                 kiszka = 0;
                 Wall newestWall = Instantiate(wallPrefab, transform);

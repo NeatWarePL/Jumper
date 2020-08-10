@@ -17,9 +17,10 @@ public class PunchScale : Module
         BeatManager.onMidJump += MidJump;
     }
 
-    public void OnBeat()
+    public void OnBeat(BeatData beatData)
     {
-        myEntityTransform.DOPunchScale(Vector3.one * 0.2f, 0.2f);
+        DOTween.Kill("PunchPlayer", true);
+        myEntityTransform.DOPunchScale(Vector3.one * 0.2f, 0.2f).SetId("PunchPlayer");
     }
 
     public void MidJump()

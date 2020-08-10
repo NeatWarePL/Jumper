@@ -9,6 +9,6 @@ public class UpdateDebugText : Module
 
     private void Update()
     {
-        debugText.text = "BEATS BETWEEN JUMPS: " + gameConfig.beatsBetweenJumps;
+        debugText.text = "BEATS BETWEEN JUMPS: " + gameConfig.beatsDuringJump;
     }
 }

@@ -7,6 +7,7 @@ public class Module : MonoBehaviour
 {
     public Entity myEntity;
     protected Transform myEntityTransform;
+    protected Rigidbody myEntityRigidbody;
 
     [HideInInspector]
     [InjectOptional] public GameConfigData gameConfig;
@@ -19,6 +20,13 @@ public class Module : MonoBehaviour
         {
             myEntity = GetComponentInParent<Entity>();
         }
-        myEntityTransform = myEntity?.transform;
+        if (myEntity != null)
+        {
+            myEntityTransform = myEntity.transform;
+            //if (myEntity.GetComponent<Rigidbody>() != null)
+            //{
+            //    myEntityRigidbody = myEntity.GetComponent<Rigidbody>();
+            //}
+        }
     }
 }
