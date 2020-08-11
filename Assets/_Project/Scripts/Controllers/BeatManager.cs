@@ -43,7 +43,13 @@ public class BeatManager : Module
         if (beatAfterJumpId == gameConfig.beatsBeforeJump + gameConfig.beatsDuringJump)
         {
             beatAfterJumpId = 0;
+            List<float> jumps = new List<float>();
+            for (int i = 0; i < gameConfig.beatsDuringJump + 1; i++)
+            {
+                jumps.Add(beatData.GetTimeToFollowingBeat(beatData, i));
+            }
             NW.Game.EventsProvider.onJump?.Invoke(beatData.GetTimeToFollowingBeat(beatData, gameConfig.beatsDuringJump) * 0.49f);
+            NW.Game.EventsProvider.onJumps?.Invoke(jumps.ToArray());
         }
     }
 }
