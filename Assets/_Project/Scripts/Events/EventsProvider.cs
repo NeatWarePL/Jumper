@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace NW.Game
@@ -10,8 +8,15 @@ namespace NW.Game
         public static Transform player;
         public static Action<float> onJump;
         public static Action<float[]> onJumps;
+
+        //Game Actions
         public static Action onGroundHit;
         public static Action onWallHit;
         public static Action onCircleHit;
+        public static Action onBounceFromGround;
+
+        //Spawns
+        public static Action<GameObject> onCircleSpawn;
+        public static Action<GameObject> onWallSpawn;
     }
 }

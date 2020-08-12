@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using UnityEngine;
-using DG.Tweening;
 
 public class PunchScale : Module
 {
     private void OnEnable()
     {
         BeatManager.onBeat += OnBeat;
-        BeatManager.onMidJump += MidJump;
+        NW.Game.EventsProvider.onBounceFromGround += MidJump;
     }
 
     private void OnDisable()
     {
         BeatManager.onBeat -= OnBeat;
-        BeatManager.onMidJump += MidJump;
+        NW.Game.EventsProvider.onBounceFromGround += MidJump;
     }
 
     public void OnBeat(BeatData beatData)

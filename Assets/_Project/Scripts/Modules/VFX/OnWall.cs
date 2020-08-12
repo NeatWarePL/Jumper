@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnWall : Module
 {
@@ -8,15 +6,13 @@ public class OnWall : Module
 
     private void OnEnable()
     {
-        //NW.Game.EventsProvider.onWallHit += PlayMyEffectIfAble;
-        BeatManager.onMidJump += PlayMyEffectIfAble;
+        NW.Game.EventsProvider.onBounceFromGround += PlayMyEffectIfAble;
     }
 
 
     private void OnDisable()
     {
-        //NW.Game.EventsProvider.onWallHit -= PlayMyEffectIfAble;
-        BeatManager.onMidJump -= PlayMyEffectIfAble;
+        NW.Game.EventsProvider.onBounceFromGround -= PlayMyEffectIfAble;
     }
 
     private void PlayMyEffectIfAble()

@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7318831192003877952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e985e164af1f8741bc82ddddd616c42, type: 3}
+  m_Name: Segments
+  m_EditorClassIdentifier: 
+  _name: Segments
+  _features: []
+--- !u!114 &-6352864574127040300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205664eb0975819479c74d7135dea8de, type: 3}
+  m_Name: Beats
+  m_EditorClassIdentifier: 
+  _name: Beats
+  _features:
+  - timestamp: 1.1842177
+    bpm: 81.00265
+  - timestamp: 1.578957
+    bpm: 156.60512
+  - timestamp: 1.9736961
+    bpm: 156.60512
+--- !u!114 &-5116937341564280266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7ca50998ed68c4da19ad81f9ca0e6f, type: 3}
+  m_Name: Chroma
+  m_EditorClassIdentifier: 
+  _name: Chroma
+  _features:
+  - timestamp: -0.27863947
+    length: 0.18575963
+    note: 4
+  - timestamp: -0.18575963
+    length: 0.27863947
+    note: 1
+  - timestamp: 0
+    length: 0.18575963
+    note: 4
+  - timestamp: 0.18575963
+    length: 0.4643991
+    note: 2
+  - timestamp: 0.6501587
+    length: 0.27863947
+    note: 6
+  - timestamp: 1.021678
+    length: 0.18575963
+    note: 0
+  - timestamp: 1.1145579
+    length: 0.27863947
+    note: 3
+  - timestamp: 1.3003174
+    length: 0.37151927
+    note: 11
+  - timestamp: 1.6718367
+    length: 0.18575963
+    note: 10
+--- !u!114 &-1193519148314965574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e985e164af1f8741bc82ddddd616c42, type: 3}
+  m_Name: Volume
+  m_EditorClassIdentifier: 
+  _name: Volume
+  _features:
+  - timestamp: -0.4643991
+    length: 0
+    value: 0
+  - timestamp: -0.37151927
+    length: 0
+    value: 0
+  - timestamp: -0.27863947
+    length: 0
+    value: 0.00031672383
+  - timestamp: -0.18575963
+    length: 0
+    value: 0.0020271568
+  - timestamp: -0.09287982
+    length: 0
+    value: 0.006300513
+  - timestamp: 0
+    length: 0
+    value: 0.012851854
+  - timestamp: 0.09287982
+    length: 0
+    value: 0.047268704
+  - timestamp: 0.18575963
+    length: 0
+    value: 0.13355884
+  - timestamp: 0.27863947
+    length: 0
+    value: 0.25296944
+  - timestamp: 0.37151927
+    length: 0
+    value: 0.36360514
+  - timestamp: 0.4643991
+    length: 0
+    value: 0.41998756
+  - timestamp: 0.55727893
+    length: 0
+    value: 0.39817518
+  - timestamp: 0.6501587
+    length: 0
+    value: 0.30875766
+  - timestamp: 0.74303854
+    length: 0
+    value: 0.19313763
+  - timestamp: 0.83591837
+    length: 0
+    value: 0.105290785
+  - timestamp: 0.9287982
+    length: 0
+    value: 0.060475275
+  - timestamp: 1.021678
+    length: 0
+    value: 0.047449663
+  - timestamp: 1.1145579
+    length: 0
+    value: 0.065328576
+  - timestamp: 1.2074376
+    length: 0
+    value: 0.10665706
+  - timestamp: 1.3003174
+    length: 0
+    value: 0.15430455
+  - timestamp: 1.3931973
+    length: 0
+    value: 0.18810369
+  - timestamp: 1.4860771
+    length: 0
+    value: 0.19513208
+  - timestamp: 1.578957
+    length: 0
+    value: 0.17373896
+  - timestamp: 1.6718367
+    length: 0
+    value: 0.13408454
+  - timestamp: 1.7647165
+    length: 0
+    value: 0.09323469
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3897cfcf026eb848b3be5b9a80f84af, type: 3}
+  m_Name: CLICK Nice
+  m_EditorClassIdentifier: 
+  _name: CLICK Nice
+  _tracks:
+  - {fileID: -6352864574127040300}
+  - {fileID: 2848566152672854830}
+  - {fileID: -5116937341564280266}
+  - {fileID: -7318831192003877952}
+  - {fileID: -1193519148314965574}
+--- !u!114 &2848566152672854830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4441c1fab3119af4bb6d18cb48a9c462, type: 3}
+  m_Name: Onsets
+  m_EditorClassIdentifier: 
+  _name: Onsets
+  _features:
+  - timestamp: 0.4643991
+    strength: 3.4909143

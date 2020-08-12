@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicDelay: 0.4
   songsList:
+  - {fileID: 11400000, guid: c338320550604b444bf7ad47e4868c96, type: 2}
+  - {fileID: 11400000, guid: 5564608534c312e4eb9fa6242cf0ab7e, type: 2}
   - {fileID: 11400000, guid: 4a73f66c3e2a8c74a84376983e297329, type: 2}
+  - {fileID: 11400000, guid: f658bd0d2826e9645855087ed51c1e93, type: 2}
   - {fileID: 11400000, guid: f3aa6a1cdde7a7640b937907a86b94af, type: 2}
-  - {fileID: 11400000, guid: 4df57e8921dbe834ca618aefd4ead5b7, type: 2}
   - {fileID: 11400000, guid: 6a94f1c3cad750f4eadfcf052dce4dc6, type: 2}
   - {fileID: 11400000, guid: 8cdc573cb0cee464e9627dff151075c8, type: 2}
+  - {fileID: 11400000, guid: 4daad277aadba3b46b2ec18d2d60339c, type: 2}
   - {fileID: 11400000, guid: 3d17f5fd4ad0ba54fa73033daaab349f, type: 2}

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnMiddle : Module
 {
@@ -9,13 +6,13 @@ public class OnMiddle : Module
 
     private void OnEnable()
     {
-        BeatManager.onMidJump += PlayMyEffectIfAble;
+        NW.Game.EventsProvider.onBounceFromGround += PlayMyEffectIfAble;
     }
 
 
     private void OnDisable()
     {
-        BeatManager.onMidJump -= PlayMyEffectIfAble;
+        NW.Game.EventsProvider.onBounceFromGround -= PlayMyEffectIfAble;
     }
 
     private void PlayMyEffectIfAble()

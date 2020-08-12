@@ -16,6 +16,8 @@ MonoBehaviour:
   playerSpeedOnConstant: 1
   playerSpeedOnDoTween: 350
   dashRange: 2
+  playerSteeringSensitivity: 13
   numberOfWallsSpawnedAheadOfPlayer: 18
+  randomizedRangeForXPositionObstacles: 30
   beatsDuringJump: 2
   beatsBeforeJump: 10
