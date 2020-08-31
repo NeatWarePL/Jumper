@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using NW;
+using System.Collections;
 using UnityEngine;
 
 public class DebreeSpawner : Entity
@@ -9,8 +10,18 @@ public class DebreeSpawner : Entity
     private void Start()
     {
         playerT = NW.Game.EventsProvider.player;
+        EventsProvider.onSongDataChanged += StartSpawn;
+    }
+    private void OnDisable()
+    {
+        EventsProvider.onSongDataChanged -= StartSpawn;
+    }
+
+    private void StartSpawn(SongData newData)
+    {
         StartCoroutine(SpawnDebree());
     }
+
 
     private IEnumerator SpawnDebree()
     {
